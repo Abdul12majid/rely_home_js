@@ -27,7 +27,7 @@ function main() {
     for (const location of forbiddenLocations) {
         if (document.body.textContent.includes(location)) {
             console.log(`Forbidden location found: ${location}`);
-            return; // Stop further execution
+            
         }
     }
 
