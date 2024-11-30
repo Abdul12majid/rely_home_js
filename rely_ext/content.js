@@ -9,7 +9,11 @@ function clickAcceptElement() {
     // Iterate over the elements to find one containing the text "Accept"
     for (const element of elements) {
         if (element.textContent.trim() === "Accept") {  // Matching exact "Accept"
+<<<<<<< HEAD
             console.log("Accept button clicked");
+=======
+            console.log("Found 'Accept' element!");
+>>>>>>> 03a9c9f9a2ddd79d81964a61cdfb571d97a7ffea
             element.click(); // Click the element
             return true; // Exit the function once clicked
         }
