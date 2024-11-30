@@ -27,7 +27,7 @@ function main() {
     for (const location of forbiddenLocations) {
         if (document.body.textContent.includes(location)) {
             console.log(`Forbidden location found: ${location}`);
-            
+            return; // Stop further execution
         }
     }
 
@@ -37,7 +37,7 @@ function main() {
         if (document.body.textContent.includes(message)) {
             console.log("Navigating back...");  // Log the message
             window.history.back();  // Go back to the previous page
-            return;  // Stop further execution
+            
         }
     }
 
