@@ -20,14 +20,11 @@ function clickAvailableWorkOrdersElement() {
 // Main function to run the extension logic
 function main() {
     // Try clicking the "New: See All Available Work Orders" element
-    const clickedWorkOrders = clickAvailableWorkOrdersElement();
-
-    // If "New: See All Available Work Orders" was clicked, continue running the script
-    if (!clickedWorkOrders) {
-        console.log("Reloading the page...");
-        window.location.reload(); // Reload the page to repeat the logic
+    clickAvailableWorkOrdersElement();
+    console.log("Reloading the page...");
+    window.location.reload(); // Reload the page to repeat the logic
     } 
-}
+
 
 // Run the main function
 main();
