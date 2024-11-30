@@ -32,7 +32,7 @@ function main() {
     }
 
     // Check if any forbidden messages are on the page
-    const forbiddenMessages = ["You have been assigned", "Sorry, you're too late"];
+    const forbiddenMessages = ["Sorry, you're too late"];
     for (const message of forbiddenMessages) {
         if (document.body.textContent.includes(message)) {
             console.log("Navigating back...");  // Log the message
