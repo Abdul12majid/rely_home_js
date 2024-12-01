@@ -5,7 +5,7 @@ function clickEnrollElement() {
     const elements = document.querySelectorAll("button, a, div, input");
 
     for (const element of elements) {
-        if (element.textContent.trim() === "New: See All Available Work Orders") { // Matching exact "Accept"
+        if (element.textContent.trim() === "NEW: See All Available Work Orders") { // Matching exact "Accept"
             console.log("'work orders' clicked");
             element.click(); // Click the element
             return true; // Exit the function once clicked
