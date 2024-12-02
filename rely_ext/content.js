@@ -1,14 +1,21 @@
 console.log("Rely Home Extension loaded on the page!");
 
+// Global variable to store the link of the "Accept" button
+let base_url = null;
+
 // Function to click the element containing the text "Accept"
 function clickAcceptElement() {
     // Find all elements on the page
-    // Find all buttons, links, and divs (commonly interactive elements)
     const elements = document.querySelectorAll("button, a, div, input");
 
     // Iterate over the elements to find one containing the text "Accept"
     for (const element of elements) {
-        if (element.textContent.trim() === "Accept") {  // Matching exact "Accept"
+        if (element.textContent.trim() === "Accept") { // Matching exact "Accept"
+            const link = element.getAttribute("href"); // Get the link from the "Accept" element
+            if (link) {
+                base_url = link; // Save the link to the global variable
+                console.log("Base URL captured: " + base_url);
+            }
             console.log("Accept button clicked");
             element.click(); // Click the element
             return true; // Exit the function once clicked
@@ -35,9 +42,15 @@ function main() {
     const forbiddenMessages = ["Sorry, you're too late"];
     for (const message of forbiddenMessages) {
         if (document.body.textContent.includes(message)) {
-            console.log("Navigating back...");  // Log the message
-            window.history.back();  // Go back to the previous page
-            
+            console.log("Forbidden message found: " + message);
+
+            if (base_url) {
+                console.log("Redirecting to base URL: " + base_url);
+                window.location.href = base_url; // Redirect to the captured base URL
+            } else {
+                console.log("Base URL not available. Navigating back...");
+                window.history.back(); // Go back to the previous page
+            }
         }
     }
 

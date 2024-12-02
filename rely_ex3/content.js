@@ -1,11 +1,11 @@
 console.log("Rely Home Extension loaded on the page!");
 
 // Function to click the element containing the text "Enroll"
-function clickEnrollElement() {
+function clickWorkElement() {
     const elements = document.querySelectorAll("button, a, div, input");
 
     for (const element of elements) {
-        if (element.textContent.trim() === "New: See All Available Work Orders") { // Matching exact "Accept"
+        if (element.textContent.trim() === "NEW: See All Available Work Orders") { // Matching exact "Accept"
             console.log("'work orders' clicked");
             element.click(); // Click the element
             return true; // Exit the function once clicked
@@ -18,8 +18,8 @@ function clickEnrollElement() {
 
 // Main function to run the extension logic
 function main() {
-    // Try clicking the "Enroll" element
-    const clicked = clickEnrollElement();
+    // Try clicking the "Work" element
+    const clicked = clickWorkElement();
 
     // Log and reload the page regardless of whether the element was found or not
     
