@@ -43,7 +43,7 @@ function clickElementByXPath(xpath) {
 // Main function to run the extension logic
 function main() {
     // Avoid re-execution after redirection by using a URL-based condition
-    const forbiddenLocations = ["Laughlin", "Pahrump", "Bullhead", "Bullhead City", "Valley"];
+    const forbiddenLocations = ["Laughlin", "Pahrump", "Bullhead", "Bullhead City"];
     
     // Check if any forbidden text is on the page
     for (const location of forbiddenLocations) {
