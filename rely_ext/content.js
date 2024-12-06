@@ -54,7 +54,7 @@ function main() {
     }
 
     // Check if any forbidden messages are on the page
-    const forbiddenMessages = ["Sorry, you're too late"];
+    const forbiddenMessages = ["Sorry you are too late."];
     for (const message of forbiddenMessages) {
         if (document.body.textContent.includes(message)) {
             console.log("Forbidden message found: " + message);
@@ -74,7 +74,7 @@ function main() {
     const xpath = '//*[@id="offerPage"]/table/tbody/tr[4]/td/div/a';
     const clickedByXPath = clickElementByXPath(xpath);
     if (clickedByXPath) {
-        console.log("Accept button clicked. Redirecting...");
+        console.log("Element clicked using XPath. Redirecting...");
         return; // Stop further execution to avoid triggering other actions
     }
 
