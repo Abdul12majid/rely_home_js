@@ -10,12 +10,12 @@ function clickElementByXPath(xpath) {
     const element = result.singleNodeValue;
 
     if (element) {
-        console.log(`Accept work order found by XPath: ${xpath}`);
+        console.log(`new work order: ${xpath}`);
         element.click(); // Click the element
         console.log("Element clicked, waiting for 5 seconds before continuing...");
         setTimeout(() => {
             console.log("5 seconds wait completed.");
-        }, 1000); // Wait for a second
+        }, 1000); // Wait for 5 seconds
         return true;
     } else {
         console.log(`Accept order not found by XPath: ${xpath}`);
@@ -31,8 +31,11 @@ function clickAcceptElement() {
         if (element.textContent.trim() === "Accept") { // Matching exact "Accept"
             clickedAcceptURL = window.location.href; // Save the current URL
             console.log("Clicked Accept button at URL: " + clickedAcceptURL);
-
             element.click(); // Click the element
+
+            setTimeout(() => {
+            console.log("5 seconds wait completed.");
+        }, 3000); // Wait for 5 seconds
             return true;
         }
     }

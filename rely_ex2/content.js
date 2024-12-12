@@ -10,6 +10,9 @@ function clickSecondRadioButton() {
         // Log the action
         console.log("Time selected.");
         secondRadioButton.click();  // Click the second radio button
+        setTimeout(() => {
+            console.log("a second wait completed.");
+        }, 500); // Wait for 5 seconds
     } else {
         console.log("Time unavailable.");
     }
@@ -25,6 +28,9 @@ function clickAcceptSWO() {
         console.log("Found 'Accept SWO' Button. Clicking...");
         acceptSWOElement.click();  // Click the "Accept SWO" element
         console.log("Job Accepted!");
+        setTimeout(() => {
+            console.log("a second wait completed.");
+        }, 500); // Wait for 5 seconds
     } else {
         console.log("'Accept SWO' element not found.");
     }
