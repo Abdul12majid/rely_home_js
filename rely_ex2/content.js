@@ -36,6 +36,24 @@ function clickAcceptSWO() {
     }
 }
 
+function clickElementByXPath(xpath) {
+    const result = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+    const element = result.singleNodeValue;
+
+    if (element) {
+        console.log(`Accept work order found by XPath: ${xpath}`);
+        element.click(); // Click the element
+        console.log("Element clicked, waiting for 5 seconds before continuing...");
+        setTimeout(() => {
+            console.log("5 seconds wait completed.");
+        }, 1000); // Wait for 5 seconds
+        return true;
+    } else {
+        console.log(`Accept order not found by XPath: ${xpath}`);
+        return false;
+    }
+}
+
 // Main function to run the extension logic
 function main() {
     // Step 1: Click the second radio button
@@ -44,6 +62,13 @@ function main() {
     // Step 2: Click the "Accept SWO" element
     clickAcceptSWO();
 
+    const xpath = '//*[@id="offerPage"]/table/tbody/tr[4]/td/div/a';
+    const clickedByXPath = clickElementByXPath(xpath);
+    if (clickedByXPath) {
+        console.log("Element clicked using XPath.");
+        return; // Exit after clicking the XPath element
+    }
+    
     // Step 3: Prevent page reload by stopping the default action
     window.onbeforeunload = function (e) {
         console.log("Page reload prevented.");
