@@ -101,10 +101,10 @@ const reloadInterval = setInterval(() => {
         console.log("Reloading page in 2 seconds...");
         setTimeout(() => {
             window.location.reload();
-        }, 2000);
+        }, 900);
     } else {
         // Clear the interval if conditions are met
         console.log("Stopping reload.");
         clearInterval(reloadInterval);
     }
-}, 2000);
+}, 900);
