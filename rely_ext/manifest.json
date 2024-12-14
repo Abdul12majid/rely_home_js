@@ -2,14 +2,14 @@
   "manifest_version": 3,
   "name": "Rely Extension",
   "version": "1.0",
-  "description": "Automate interactions on the specified website.",
+  "description": "Automate interactions on the specified website 1.",
   "permissions": ["activeTab", "scripting"],
   "host_permissions": [
     "https://relyhome.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://relyhome.com/*"],  // Ensure the scheme (https://) is present
+      "matches": ["https://relyhome.com/jobs/accept/available-swo.php*"],  // Ensure the scheme (https://) is present
       "js": ["content.js"]
     }
   ],
