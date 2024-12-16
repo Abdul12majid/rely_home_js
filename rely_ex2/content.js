@@ -1,8 +1,14 @@
 console.log("Second extension");
 
+// Counter to track the number of reloads
+let reloadCount = 0;
+
 // Flag to track if the element has already been clicked or the process should stop
 let elementClicked = false;
 let stopReloading = false;
+
+// The target URL to redirect to after 3 reloads
+const targetURL = "https://relyhome.com"; // Replace with your desired URL
 
 // Function to click the second radio button using the provided XPath
 function clickSecondRadioButton() {
@@ -70,6 +76,13 @@ function checkForText(text) {
 
 // Main function to run the extension logic
 function main() {
+    // Check if reload count exceeds the limit
+    if (reloadCount >= 3) {
+        console.log(`Reload count reached ${reloadCount}. Redirecting to ${targetURL}...`);
+        window.location.href = targetURL;
+        clearInterval(reloadInterval); // Stop further execution
+        return;
+    }
 
     // Check for "Sorry you are too late." text on the page
     if (checkForText("Sorry you are too late.")) {
@@ -95,16 +108,17 @@ function main() {
 // Set an interval to run the main function every 2 seconds
 const reloadInterval = setInterval(() => {
     console.log("Running main function...");
+    reloadCount++; // Increment the reload count
     main();
 
     if (!elementClicked && !stopReloading) {
-        console.log("Reloading page in 2 seconds...");
+        console.log(`Reloading page. Reload count: ${reloadCount}`);
         setTimeout(() => {
             window.location.reload();
-        }, 900);
+        }, 1500);
     } else {
         // Clear the interval if conditions are met
         console.log("Stopping reload.");
         clearInterval(reloadInterval);
     }
-}, 900);
+}, 1500);
