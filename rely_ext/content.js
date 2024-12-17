@@ -26,7 +26,7 @@ function clickAcceptElement() {
 
 // Function to handle forbidden locations
 function handleForbiddenLocations() {
-    const forbiddenLocations = ["Laughlin", "Pahrump", "Bullhead", "Bullhead City"];
+    const forbiddenLocations = ["Sandy Valley", "Laughlin", "Pahrump", "Bullhead", "Bullhead City"];
 
     for (const location of forbiddenLocations) {
         if (document.body.textContent.includes(location)) {
