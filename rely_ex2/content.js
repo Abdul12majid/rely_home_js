@@ -8,7 +8,7 @@ let elementClicked = false;
 let stopReloading = false;
 
 // The target URL to redirect to after 3 reloads
-const targetURL = "https://relyhome.com"; // Replace with your desired URL
+const targetURL = "https://relyhome.com/jobs/accept/available-swo.php?vid=BTpUbca43B2X0MQfhhT7REScrJmkRvuPbODS7MHr-fM&exp=CrtUoMQKvhwYpevW8Q9TNTIunHiJHiZBPSk936PlURc&src=relyemail"; // Replace with your desired URL
 
 // Function to click the second radio button using the provided XPath
 function clickSecondRadioButton() {
@@ -115,10 +115,10 @@ const reloadInterval = setInterval(() => {
         console.log(`Reloading page. Reload count: ${reloadCount}`);
         setTimeout(() => {
             window.location.reload();
-        }, 1500);
+        }, 2000);
     } else {
         // Clear the interval if conditions are met
         console.log("Stopping reload.");
         clearInterval(reloadInterval);
     }
-}, 1500);
+}, 2000);
